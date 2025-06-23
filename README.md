@@ -2,10 +2,10 @@
 
  This project demonstrates a complete local Retrieval-Augmented Generation (RAG) system. It leverages:
  - **Weaviate (v4)** as the vector database.
- - **Ollama** for local embedding and generative models.
- - **LlamaParse** for advanced, page-aware document parsing (especially PDFs).
+ - **Ollama** for local embedding (`nomic-embed-text`) and generative model (`llama3.2`).  
+ - **LlamaParse** for intelligent document parsing.
 
- The system is designed to process documents, chunk them while preserving page and structural information, store them in Weaviate, and then answer questions using the retrieved context.
+ This proof of concept is designed to process documents, chunk them while preserving page and structural information, store them in Weaviate, and then answer questions using the retrieved context.
 
 <img width="1207" alt="image" src="https://github.com/user-attachments/assets/f619be37-3802-4042-90eb-03ad2d39a544" />
 
@@ -14,14 +14,14 @@
  Before you begin, ensure you have the following installed and running:
 
  ### 1. Docker
- Docker or OrbStack(https://orbstack.dev) is required to run the Weaviate vector database.
- - OrbStack is faster  
+ [Docker](https://docker.com) or [OrbStack](https://orbstack.dev) is required to run the Weaviate vector database.
+ - OrbStack is faster and more efficient. 
  - Ensure it is running before starting the Weaviate container.
 
  ### 2. Ollama
  Ollama is used to run large language models locally for both embedding (vectorization) and generation.
- - Download and install [Ollama](https://ollama.com/download) for your operating system.
- - Once installed, ensure Ollama is running. The application will automatically pull the necessary models (`nomic-embed-text` and `llama3.2`) if they are not already present.
+ - Download and install [Ollama](https://ollama.com/download) for your machine.  
+ - Once installed, ensure Ollama is running.
 
  ### 3. LlamaParse API Key
  LlamaParse is used for intelligent parsing of PDF documents, extracting text, tables, and other structured data while maintaining page integrity.
@@ -82,17 +82,7 @@
    ```
    💬 Ask a question (or 'quit' to exit): What are the coverage limits?
    ```
-
- - **Page-Specific Search:** To search only within specific pages (e.g., pages 1 and 2):
-   ```
-   💬 Ask a question (or 'quit' to exit): page:1,2 What's on the first two pages?
-   ```
-
- - **Section-Specific Search:** To search only within sections matching certain headers (e.g., "Definitions"):
-   ```
-   💬 Ask a question (or 'quit' to exit): section:Definitions What is reinsurance?
-   ```
-
+   
  To exit the interactive session, type `quit`, `exit`, or `q`.
 
  ## Cleaning Up
