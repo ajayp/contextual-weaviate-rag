@@ -7,6 +7,8 @@
 
  The system is designed to process documents, chunk them while preserving page and structural information, store them in Weaviate, and then answer questions using the retrieved context.
 
+<img width="1207" alt="image" src="https://github.com/user-attachments/assets/f619be37-3802-4042-90eb-03ad2d39a544" />
+
  ## Prerequisites
 
  Before you begin, ensure you have the following installed and running:
